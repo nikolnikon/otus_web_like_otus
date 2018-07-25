@@ -8,11 +8,14 @@ from django.db import models
 class Course(models.Model):
     name = models.CharField(max_length=256, unique=True)
     description = models.TextField()
-    price = models.PositiveSmallIntegerField()
+    price = models.PositiveIntegerField()
     duration = models.PositiveSmallIntegerField()
     start_date = models.DateTimeField()
-    load = models.TextField()
-    logo = models.ImageField(upload_to='images/courses/')
+    load = models.CharField(max_length=256)
+    logo = models.ImageField(upload_to='images/courses/', null=True, blank=True)
+
+    def __str__(self):
+        return self.name
     
 
 class Module(models.Model):
