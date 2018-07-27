@@ -1,0 +1,102 @@
+- model: users.user
+  pk: 2
+  fields:
+    password: pbkdf2_sha256$100000$jtkyfch9Y0Sh$Oh9ZtO2Vx9di+38gCmN9MXEQSjxlo5KSlzpN7WcEs0c=
+    last_login: 2018-07-27 14:48:19.159789+00:00
+    is_superuser: true
+    username: admin
+    first_name: ''
+    last_name: ''
+    email: ''
+    is_staff: true
+    is_active: true
+    date_joined: 2018-07-27 14:47:34.418230+00:00
+    is_student: false
+    is_tutor: false
+    groups: []
+    user_permissions: []
+- model: users.user
+  pk: 3
+  fields:
+    password: pbkdf2_sha256$100000$2xWVNyBMCKik$ifOfy7eVYZBi02JuvfTrSKVlzpMY+hLV8OpOfpQmBfo=
+    last_login: null
+    is_superuser: false
+    username: nikolnikon@gmail.com
+    first_name: "\u041D\u0438\u043A\u043E\u043B\u0430\u0439"
+    last_name: "\u041D\u0438\u043A\u043E\u043D\u043E\u0432"
+    email: nikolnikon@gmail.com
+    is_staff: false
+    is_active: true
+    date_joined: 2018-07-27 14:55:07+00:00
+    is_student: true
+    is_tutor: false
+    groups: []
+    user_permissions: []
+- model: users.user
+  pk: 4
+  fields:
+    password: pbkdf2_sha256$100000$NMcDSQzZ1SLz$efXjXyG/tfziWU/ZPAgsPHsZdYC/Pq43uPTNnb5MghY=
+    last_login: null
+    is_superuser: false
+    username: ilya.lebedev@otus.ru
+    first_name: "\u0418\u043B\u044C\u044F"
+    last_name: "\u041B\u0435\u0431\u0435\u0434\u0435\u0432"
+    email: ilya.lebedev@otus.ru
+    is_staff: false
+    is_active: true
+    date_joined: 2018-07-27 15:28:20+00:00
+    is_student: false
+    is_tutor: true
+    groups: []
+    user_permissions: []
+- model: users.user
+  pk: 5
+  fields:
+    password: pbkdf2_sha256$100000$efuhDidJxX15$n/Z7xwDvv9WEj9Ok/32n+/eDR0xkMQDbONnYqWmDG+0=
+    last_login: null
+    is_superuser: false
+    username: oleg.kozincev@otus.ru
+    first_name: "\u041E\u043B\u0435\u0433"
+    last_name: "\u041A\u043E\u0437\u0438\u043D\u0446\u0435\u0432"
+    email: oleg.kozincev@otus.ru
+    is_staff: false
+    is_active: true
+    date_joined: 2018-07-27 15:29:31+00:00
+    is_student: false
+    is_tutor: true
+    groups: []
+    user_permissions: []
+- model: users.user
+  pk: 6
+  fields:
+    password: pbkdf2_sha256$100000$vnRgbyQgPSyM$qKEatZLs9qyrqOJHGfqqpORqNiGA9ePpsrtogkCauTE=
+    last_login: null
+    is_superuser: false
+    username: evgeniy.volosatov@otus.ru
+    first_name: "\u0415\u0432\u0433\u0435\u043D\u0438\u0439"
+    last_name: "\u0412\u043E\u043B\u043E\u0441\u0430\u0442\u043E\u0432"
+    email: evgeniy.volosatov@otus.ru
+    is_staff: false
+    is_active: true
+    date_joined: 2018-07-27 15:30:54+00:00
+    is_student: false
+    is_tutor: true
+    groups: []
+    user_permissions: []
+- model: users.user
+  pk: 7
+  fields:
+    password: pbkdf2_sha256$100000$BMFOEn4DPmSA$n+j2bcOrvAYG7FD4d4Ck1pMYncGAtgK6T2YrIMwJiJw=
+    last_login: null
+    is_superuser: false
+    username: jet@gmail.com
+    first_name: "\u0410\u043D\u0442\u043E\u043D"
+    last_name: "\u0425\u0440\u043E\u043C\u043E\u0432"
+    email: jet@gmail.com
+    is_staff: false
+    is_active: true
+    date_joined: 2018-07-27 15:32:14+00:00
+    is_student: true
+    is_tutor: false
+    groups: []
+    user_permissions: []
