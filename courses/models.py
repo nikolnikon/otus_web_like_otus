@@ -1,7 +1,5 @@
 from django.db import models
-
-# todo Добавить связь работодателей с курсами
-# todo Добавить связь преподавателей с курсами
+from django.conf import settings
 
 
 # todo Подумать насчет запихивания модулей и уроков в json
@@ -13,6 +11,8 @@ class Course(models.Model):
     start_date = models.DateTimeField()
     load = models.CharField(max_length=256)
     logo = models.ImageField(upload_to='images/courses/', null=True, blank=True)
+    tutors = models.ManyToManyField(settings.AUTH_USER_MODEL, related_name='courses')
+    employers = models.ManyToManyField('Employer', related_name='courses')
 
     def __str__(self):
         return self.name
@@ -33,7 +33,11 @@ class Lesson(models.Model):
     module = models.ForeignKey(Module, on_delete=models.CASCADE, related_name='lessons')
 
 
+# todo Убрать blank из логотипа?
 class Employer(models.Model):
     name = models.CharField(max_length=256)
     about = models.TextField()
-    logo = models.ImageField(upload_to='images/employers/')
+    logo = models.ImageField(upload_to='images/employers/', blank=True)
+
+    def __str(self):
+        return self.name

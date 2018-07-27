@@ -18,7 +18,8 @@ class Base(Configuration):
         'django.contrib.messages',
         'django.contrib.staticfiles',
 
-        'courses.apps.CoursesConfig'
+        'courses.apps.CoursesConfig',
+        'users.apps.UsersConfig',
     ]
 
     MIDDLEWARE = [
@@ -68,7 +69,9 @@ class Base(Configuration):
         },
     ]
 
-    LANGUAGE_CODE = 'en-us'
+    AUTH_USER_MODEL = 'users.User'
+
+    LANGUAGE_CODE = 'ru-ru'
 
     TIME_ZONE = 'UTC'
 
@@ -77,6 +80,10 @@ class Base(Configuration):
     USE_L10N = True
 
     USE_TZ = True
+
+    STATICFILES_DIRS = [
+        os.path.join(BASE_DIR, "static"),
+    ]
 
     STATIC_URL = '/static/'
 
