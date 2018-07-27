@@ -32,27 +32,35 @@
         </div>
     </div>
     <nav class="nav">
-        <a class="nav-link" href="#">О курсе</a>
-        <a class="nav-link" href="#">Программа</a>
-        <a class="nav-link" href="#">Расписание</a>
-        <a class="nav-link" href="#">Преподаватели</a>
-        <a class="nav-link" href="#">Работодатели</a>
+        <a class="nav-link" href="#about">О курсе</a>
+        <a class="nav-link" href="#syllabus">Программа</a>
+        <a class="nav-link" href="#schedule">Расписание</a>
+        <a class="nav-link" href="#tutors">Преподаватели</a>
+        <a class="nav-link" href="#employers">Работодатели</a>
     </nav>
     <div class="container-fluid mt-2">
         <div class="row">
             <div class="col-12">
-                <h2>О курсе</h2>
+                <h2 id="about">О курсе</h2>
                 {{ course.description|safe }}
             </div>
         </div>
         <div class="row">
             <div class="col-12">
-                <h2>Программа</h2>
+                <h2 id="syllabus">Программа</h2>
+                {% for module in course.modules.all %}
+                    <h3>{{ module.name }}</h3>
+                    <ul>
+                    {% for lesson in module.lessons.all %}
+                        <li>{{ lesson.name }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endfor %}
             </div>
         </div>
         <div class="row">
             <div class="col-12">
-                <h2>Расписание</h2>
+                <h2 id="schedule">Расписание</h2>
                 <p>
                     Занятия начинаются в {{ course.start_date|date:'l, d F H:i' }}
                 </p>
@@ -60,14 +68,21 @@
         </div>
         <div class="row">
             <div class="col-12">
-                <h2>Преподаватели</h2>
-                {{ course.description|safe }}
+                <h2 id="tutors">Преподаватели</h2>
+                {% for tutor in course.tutors.all %}
+                    <h3>{{ tutor.first_name }} {{ tutor.last_name }}</h3>
+                    {{ tutor.about|safe }}
+                {% endfor %}
             </div>
         </div>
         <div class="row">
             <div class="col-12">
-                <h2>Работодатели</h2>
-                {{ course.description }}
+                <h2 id="employers">Работодатели</h2>
+                <ul>
+                {% for employer in course.employers.all %}
+                    <li><strong>{{ employer.name }}</strong></li>
+                {% endfor %}
+                </ul>
             </div>
         </div>
     </div>

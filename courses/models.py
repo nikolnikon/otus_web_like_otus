@@ -20,17 +20,23 @@ class Course(models.Model):
 
 class Module(models.Model):
     name = models.CharField(max_length=256)
-    description = models.TextField()
+    description = models.TextField(null=True, blank=True)
     course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name='modules')
+
+    def __str__(self):
+        return self.name
 
 
 # todo Подумать насчет вынесения homework в отдельную модель
 class Lesson(models.Model):
     name = models.CharField(max_length=256)
-    description = models.TextField(null=True)
+    description = models.TextField(null=True, blank=True)
     date = models.DateTimeField()
-    homework = models.TextField(null=True)
+    homework = models.TextField(null=True, blank=True)
     module = models.ForeignKey(Module, on_delete=models.CASCADE, related_name='lessons')
+
+    def __str__(self):
+        return self.name
 
 
 # todo Убрать blank из логотипа?
