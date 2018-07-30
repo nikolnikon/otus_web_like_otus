@@ -1,31 +1,27 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Обувь для бега.
+    Курсы.
 {% endblock %}
 
 {% block content %}
-{#    todo Формировать изображения под карточку#}
-    <h1>Обувь для бега</h1>
+    <h1>Курсы</h1>
     <div class="album py-5 bg-light">
         <div class="container mt-5">
             <div class="row">
-                {% for product in product_list %}
+                {% for course in course_list %}
                     <div class="col-md-4">
                         <div class="card mb-4 box-shadow">
-                            {% for photo in product.photos.all %}
-                                {% if photo.is_main == True %}
-                                    <a href="{% url 'products:detail' product.id %}">
-                                        <img class="card-img-top" src="{{ photo.image.url }}" style="height: 225px; width: 100%; display: block;">
-                                    </a>
-                                {% endif %}
-                            {% endfor %}
+                            <a href="{% url 'courses:detail' course.id %}">
+                                <img class="card-img-top" src="{{ course.logo.url }}" style="height: 225px; width: 100%; display: block;">
+                            </a>
                             <div class="card-body">
-                                <p class="card-text">{{ product.name }}</p>
+                                <h3 class="card-title">{{ course.name }}</h3>
+                                <p class="card-text"></p>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <span>{{ product.price }} руб.</span>
-                                    <button type="button" class="btn btn-sm btn-outline-secondary">Купить</button>
-                                    <a href="{% url 'products:detail' product.id %}" class="text-muted">Подробнее</a>
+                                    <span>С {{ course.start_date|date:'d F' }} {{ course.duration }} месяцев</span>
+{#                                    <button type="button" class="btn btn-sm btn-outline-secondary">Купить</button>#}
+                                    <a href="{% url 'courses:detail' course.id %}" class="text-muted">Подробнее</a>
                                 </div>
                             </div>
                         </div>

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <!-- saved from url=(0059)http://getbootstrap.com/docs/4.1/examples/starter-template/ -->
 <html lang="en">
@@ -6,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="description" content="">
         <meta name="author" content="">
-        <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+        <link rel="icon" href="{% static 'images/favicon.png' %}">
 
         <title>{% block title %}{% endblock %} Like OTUS</title>
 
@@ -16,8 +17,7 @@
               crossorigin="anonymous">
 
         <!-- Custom styles for this template -->
-        {% load static %}
-        <link href="{% static 'style.css' %}" rel="stylesheet">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
         <link type="text/css" rel="stylesheet" href="chrome-extension://pioclpoplcdbaefihamjohnefbikjilc/content.css">
     </head>
 
@@ -31,7 +31,7 @@
             <div class="collapse navbar-collapse" id="navbarsExampleDefault">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Курсы <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="{% url 'courses:list' %}">Курсы <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Мероприятия</a>
