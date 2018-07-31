@@ -12,6 +12,7 @@ class Base(Configuration):
 
     INSTALLED_APPS = [
         'django.contrib.admin',
+        'registration',
         'django.contrib.auth',
         'django.contrib.contenttypes',
         'django.contrib.sessions',
@@ -90,6 +91,8 @@ class Base(Configuration):
     MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
     MEDIA_URL = '/media/'
+
+    SIMPLE_BACKEND_REDIRECT_URL = '/courses'
 
 
 class Dev(Base):
