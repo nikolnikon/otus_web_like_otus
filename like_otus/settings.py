@@ -1,5 +1,6 @@
 import os
 from configurations import Configuration, values
+from django.urls import reverse_lazy
 
 
 class Base(Configuration):
@@ -92,7 +93,9 @@ class Base(Configuration):
 
     MEDIA_URL = '/media/'
 
-    SIMPLE_BACKEND_REDIRECT_URL = '/courses'
+    SIMPLE_BACKEND_REDIRECT_URL = reverse_lazy('courses:list')
+
+    LOGIN_REDIRECT_URL = reverse_lazy('courses:list')
 
 
 class Dev(Base):
