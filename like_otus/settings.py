@@ -7,8 +7,6 @@ class Base(Configuration):
 
     BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-    SECRET_KEY = '121ykr@(-n7svq8x9yxe9y^$k)2@66fs6hdxjrg+!4nva%%v)k'
-
     ALLOWED_HOSTS = []
 
     INSTALLED_APPS = [
@@ -100,7 +98,9 @@ class Base(Configuration):
 
 class Dev(Base):
     DEBUG = True
+    SECRET_KEY = 'dev'
 
 
 class Prod(Base):
     DEBUG = False
+    SECRET_KEY = values.SecretValue()
