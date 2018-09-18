@@ -1,5 +1,7 @@
 {% extends 'base.html' %}
 
+{% load course_extras %}
+
 {% block title %}
     {{ course.name }}.
 {% endblock %}
@@ -48,11 +50,12 @@
         <div class="row">
             <div class="col-12">
                 <h2 id="syllabus">Программа</h2>
-                {% for module in course.modules.all %}
-                    <h3>{{ module.name }}</h3>
+                {% for module_name in course.get_modules_names %}
+                    <h3>{{ module_name }}</h3>
                     <ul>
-                    {% for lesson in module.lessons.all %}
-                        <li>{{ lesson.name }}</li>
+                    {% get_lessons_names course module_name as lessons_names %}
+                    {% for lesson_name in lessons_names %}
+                        <li>{{ lesson_name }}</li>
                     {% endfor %}
                     </ul>
                 {% endfor %}
@@ -79,8 +82,8 @@
             <div class="col-12">
                 <h2 id="employers">Работодатели</h2>
                 <ul>
-                {% for employer in course.employers.all %}
-                    <li><strong>{{ employer.name }}</strong></li>
+                {% for employer_name in course.get_employers_names %}
+                    <li><strong>{{ employer_name }}</strong></li>
                 {% endfor %}
                 </ul>
             </div>
