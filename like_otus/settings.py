@@ -104,3 +104,4 @@ class Dev(Base):
 class Prod(Base):
     DEBUG = False
     SECRET_KEY = values.SecretValue()
+    ALLOWED_HOSTS = ['localhost']
