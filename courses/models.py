@@ -16,7 +16,13 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
-    
+
+    def get_modules_names(self):
+        return [module.name for module in self.modules.all()]
+
+    def get_employers_names(self):
+        return [employer.name for employer in self.employers.all()]
+
 
 class Module(models.Model):
     name = models.CharField(max_length=256)
