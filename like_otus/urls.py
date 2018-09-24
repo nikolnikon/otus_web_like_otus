@@ -9,6 +9,7 @@ urlpatterns = [
     path('courses/', include('courses.urls')),
     path('users/', include('users.urls')),
     path('users/', include('registration.backends.simple.urls')),
+    path('api/', include('api.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
