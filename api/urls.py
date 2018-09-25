@@ -1,12 +1,13 @@
 from django.conf.urls import url, include
 from rest_framework.routers import DefaultRouter
-from api import views
+from api.views import UserViewSet, CourseViewSet
 
 
 app_name = 'api'
 
 router = DefaultRouter()
-router.register(r'users', views.UserViewSet)
+router.register(r'users', UserViewSet)
+router.register(r'courses', CourseViewSet)
 
 urlpatterns = [
     url(r'^', include(router.urls))
