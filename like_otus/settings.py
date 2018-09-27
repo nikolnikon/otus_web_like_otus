@@ -19,6 +19,7 @@ class Base(Configuration):
         'django.contrib.staticfiles',
 
         'rest_framework',
+        'corsheaders',
 
         'courses.apps.CoursesConfig',
         'users.apps.UsersConfig',
@@ -26,6 +27,7 @@ class Base(Configuration):
     ]
 
     MIDDLEWARE = [
+        'corsheaders.middleware.CorsMiddleware',
         'django.middleware.security.SecurityMiddleware',
         'django.contrib.sessions.middleware.SessionMiddleware',
         'django.middleware.common.CommonMiddleware',
@@ -102,6 +104,7 @@ class Base(Configuration):
 class Dev(Base):
     DEBUG = True
     SECRET_KEY = 'dev'
+    CORS_ORIGIN_ALLOW_ALL = True
 
 
 class Prod(Base):

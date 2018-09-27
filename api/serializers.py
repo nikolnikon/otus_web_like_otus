@@ -13,4 +13,4 @@ class UserSerializer(serializers.ModelSerializer):
 class CourseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Course
-        exclude = ('employers', 'tutors')
+        fields = '__all__'
