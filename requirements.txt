@@ -7,3 +7,5 @@ python-dotenv~=0.8.0
 pytz==2018.5
 PyYAML~=3.0
 django-registration-redux~=2.0
+djangorestframework~=3.0
+django-cors-headers~=2.0
