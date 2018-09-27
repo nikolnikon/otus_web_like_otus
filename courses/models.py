@@ -5,7 +5,7 @@ from django.conf import settings
 # todo Подумать насчет запихивания модулей и уроков в json
 class Course(models.Model):
     name = models.CharField(max_length=256, unique=True)
-    brief = models.CharField(max_length=256, null=True)
+    # brief = models.CharField(max_length=256, null=True)
     description = models.TextField()
     price = models.PositiveIntegerField()
     duration = models.PositiveSmallIntegerField()
